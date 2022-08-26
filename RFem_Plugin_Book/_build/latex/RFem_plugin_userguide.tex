@@ -84,10 +84,10 @@
         % End of preamble defined in sphinx-jupyterbook-latex %
         
 
-\title{RFEM-Plugin for SIMULTAN}
-\date{Aug 25, 2022}
+\title{RFEM-Plugin for SIMULTAN (Work in Progress)}
+\date{Aug 26, 2022}
 \release{}
-\author{Andreas Sarkany and Zsombor Jarosi}
+\author{Copyright (c) 2022 RWT Plus ZT GmbH and TU Wien}
 \newcommand{\sphinxlogo}{\vbox{}}
 \renewcommand{\releasename}{}
 \makeindex
@@ -103,7 +103,8 @@
 
 \sphinxAtStartPar
 This user guide should help navigate the RFEM\sphinxhyphen{}Plugin which enables structural analysis with the SIMULTAN datamodel based
-on the finite element software RFEM 6 by Dlubal.
+on the finite element
+software \sphinxhref{https://www.dlubal.com/en/downloads-and-information/documents/online-manuals/rfem-6}{RFEM 6 by Dlubal}.
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
@@ -132,11 +133,7 @@ Inhalt
 
 \item {} 
 \sphinxAtStartPar
-{\hyperref[\detokenize{Connecting_an_existing_model_to_the_RFem_Plugin::doc}]{\sphinxcrossref{Connecting an existing model to the RFEM Plugin}}}
-
-\item {} 
-\sphinxAtStartPar
-{\hyperref[\detokenize{SIMULTAN_Datastructure_to_incorporate_the_RFem_Data_model::doc}]{\sphinxcrossref{SIMULTAN Datastructure to incorporate the RFem Data model}}}
+{\hyperref[\detokenize{SIMULTAN_Datastructure_to_incorporate_the_RFem_Data_model::doc}]{\sphinxcrossref{SIMULTAN Datastructure to incorporate the RFEM Data model}}}
 
 \item {} 
 \sphinxAtStartPar
@@ -144,7 +141,7 @@ Inhalt
 
 \item {} 
 \sphinxAtStartPar
-{\hyperref[\detokenize{References::doc}]{\sphinxcrossref{Literatur}}}
+{\hyperref[\detokenize{References::doc}]{\sphinxcrossref{References}}}
 
 \end{itemize}
 \end{itemize}
@@ -158,42 +155,403 @@ Inhalt
 \section{What is the RFEM\sphinxhyphen{}Plugin?}
 \label{\detokenize{Introduction:what-is-the-rfem-plugin}}
 \sphinxAtStartPar
-This is a {\hyperref[\detokenize{intro:intro}]{\sphinxcrossref{\DUrole{std,std-ref}{reference}}}}.
+The RFEM\sphinxhyphen{}plugin (in the following referred to as “the plugin”) enables structural analysis with the finite element
+software \sphinxhref{https://www.dlubal.com/en/downloads-and-information/documents/online-manuals/rfem-6}{RFEM 6 by Dlubal} for the
+SIMULTAN\sphinxhyphen{}data model. This is achieved by exporting all necessary data for rudimental structural analysis into an
+XML\sphinxhyphen{}file which can be imported into RFEM 6.
 
 
 \section{Functionality covered by the RFEM\sphinxhyphen{}Plugin}
 \label{\detokenize{Introduction:functionality-covered-by-the-rfem-plugin}}
+\sphinxAtStartPar
+In the current state of development the plugin is able to export:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Geometry
+
+\item {} 
+\sphinxAtStartPar
+Material data
+
+\item {} 
+\sphinxAtStartPar
+Loads
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Nodal
+
+\item {} 
+\sphinxAtStartPar
+Line
+
+\item {} 
+\sphinxAtStartPar
+Surface
+
+\end{itemize}
+
+\item {} 
+\sphinxAtStartPar
+Supports with certain nonlinear behaviour
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Nodal
+
+\item {} 
+\sphinxAtStartPar
+Line
+
+\item {} 
+\sphinxAtStartPar
+Surface
+
+\end{itemize}
+
+\item {} 
+\sphinxAtStartPar
+Structural components and their hinges with certain nonlinear behaviour
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Beams
+
+\item {} 
+\sphinxAtStartPar
+Columns
+
+\item {} 
+\sphinxAtStartPar
+Surfaces
+
+\end{itemize}
+
+\end{itemize}
+
+\sphinxAtStartPar
+What we are not able to do right now:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Import results back into the SIMULTAN\sphinxhyphen{}data model (since in its current state there is now mesh visualization
+implemented in SIMULTAN\sphinxhyphen{}data model)
+
+\item {} 
+\sphinxAtStartPar
+Track changes made in the RFEM\sphinxhyphen{}data model but not in the SIMULTAN\sphinxhyphen{}data model
+
+\end{itemize}
+
 
 \section{Project}
 \label{\detokenize{Introduction:project}}
+\sphinxAtStartPar
+The development of the RFEM\sphinxhyphen{}Plugin is the result of the FFG\sphinxhyphen{}research project “Ganzheitliche Gebaeudesimulation”
+supervised by Christoph Bauer. Additional information about the project and project outcomes can be found under these
+links:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\sphinxhref{https://www.woschitzgroup.com/news/bim-war-gestern/}{Ganzheitliche Gebaeudesimulation Press}
+
+\item {} 
+\sphinxAtStartPar
+\DUrole{xref,myst}{RFEM Plugin Publication}
+
+\item {} 
+\sphinxAtStartPar
+\DUrole{xref,myst}{IDA\sphinxhyphen{}ICE Plugin Publication}
+
+\item {} 
+\sphinxAtStartPar
+\DUrole{xref,myst}{Additional works}
+
+\end{itemize}
+
+\sphinxAtStartPar
+Information and publications about SIMULTAN:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\sphinxhref{https://repositum.tuwien.at/handle/20.500.12708/62532}{SIMULTAN as a Big\sphinxhyphen{}Open\sphinxhyphen{}Real\sphinxhyphen{}BIM Data Model \sphinxhyphen{} Proof of Concept for the Design Phase}
+{[}\hyperlink{cite.References:id8}{PLW+19}{]}
+
+\item {} 
+\sphinxAtStartPar
+\DUrole{xref,myst}{Digital Twin applications using the SIMULTAN data model and Python} {[}\hyperlink{cite.References:id5}{BuhlerSB22}{]}
+
+\item {} 
+\sphinxAtStartPar
+SIMULTAN as a Big\sphinxhyphen{}Open\sphinxhyphen{}Real\sphinxhyphen{}BIM Data Model \sphinxhyphen{} Proof of Concept for the Design Phase
+{[}\hyperlink{cite.References:id8}{PLW+19}{]}
+
+\item {} 
+\sphinxAtStartPar
+SIMULTAN \sphinxhyphen{} Simultane Planungsumgebung fuer Gebaeudecluster in resilienten, ressourcen\sphinxhyphen{} und hoechst energieeffizienten
+Stadtteilen {[}\hyperlink{cite.References:id4}{Betal}{]}
+
+\end{itemize}
+
 
 \section{Authors}
 \label{\detokenize{Introduction:authors}}
+\sphinxAtStartPar
+Project supervision of the development of the RFEM\sphinxhyphen{}Plugin was done by Andreas Sarkany and Bernhard Steiner. Core
+development of the software was conducted by Zsombor Jarosi. Additional Feedback and testing was provided by Thomas Rabl
+and Thomas Bednar.
+
 
 \section{Getting help}
 \label{\detokenize{Introduction:getting-help}}
+\sphinxAtStartPar
+You can get in touch with the authors via the Issue\sphinxhyphen{}Tracker of the repository this user guide is published on.
+
 \sphinxstepscope
 
 
 \chapter{Getting started with the RFEM Plugin}
 \label{\detokenize{Getting_started_with_the_RFem_Plugin:getting-started-with-the-rfem-plugin}}\label{\detokenize{Getting_started_with_the_RFem_Plugin:id1}}\label{\detokenize{Getting_started_with_the_RFem_Plugin::doc}}
 
-\section{Installation}
-\label{\detokenize{Getting_started_with_the_RFem_Plugin:installation}}
+\section{Installing the SIMULTAN\sphinxhyphen{}Editor}
+\label{\detokenize{Getting_started_with_the_RFem_Plugin:installing-the-simultan-editor}}
+\sphinxAtStartPar
+To use the plugin you need to install the latest version of the SIMULTAN Editor, which can be
+found \sphinxhref{https://github.com/bph-tuwien/SIMULTAN.Documentation/wiki}{here}. The SIMULTAN Editor enables you to interact
+with the SIMULTAN data model through a user interface. A comprehensive user\sphinxhyphen{}guide how to install and interact with the
+SIMULTAN Editor can be found under this \sphinxhref{https://github.com/bph-tuwien/SIMULTAN.Documentation/wiki}{link}.
+
+
+\section{Installing the RFEM Plugin}
+\label{\detokenize{Getting_started_with_the_RFem_Plugin:installing-the-rfem-plugin}}
+\sphinxAtStartPar
+After installing the SIMULTAN Editor you can install the RFEM Plugin via the Plugin Manager \hyperref[\detokenize{Getting_started_with_the_RFem_Plugin:plugin-manager}]{Fig.\@ \ref{\detokenize{Getting_started_with_the_RFem_Plugin:plugin-manager}}}.
+Either download the plugin from the SIMULTAN Server (not possible yet) or install from your local disk with the
+installation file.
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[height=250\sphinxpxdimen]{{plugin_manager}.png}
+\caption{Plugin Manager in he SIMULTAN Editor.}\label{\detokenize{Getting_started_with_the_RFem_Plugin:plugin-manager}}\end{figure}
+
+\sphinxAtStartPar
+When the installation was successful a new tab will be added to your taskbar named RFEM Plugin
+\hyperref[\detokenize{Getting_started_with_the_RFem_Plugin:rfem-plugin-new-tab}]{Fig.\@ \ref{\detokenize{Getting_started_with_the_RFem_Plugin:rfem-plugin-new-tab}}}.
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[height=200\sphinxpxdimen]{{rfem_plugin_new_tab}.png}
+\caption{New tab added to the taskbar of the SIMULTAN Editor after installing the RFEM Plugin.}\label{\detokenize{Getting_started_with_the_RFem_Plugin:rfem-plugin-new-tab}}\end{figure}
+
+
+\section{Run the example}
+\label{\detokenize{Getting_started_with_the_RFem_Plugin:run-the-example}}
+\sphinxAtStartPar
+To check if everything was installed properly please run one of the examples provided where
+you \sphinxhref{https://github.com/bph-tuwien/GBS.Plugins/releases}{downloaded} the installation file of the plugin. Open the
+example in your SIMULTAN Editor (username and password is “admin”), and follow the instructions in the
+chapter {\hyperref[\detokenize{Running_a_simulation:running-a-simulation}]{\sphinxcrossref{\DUrole{std,std-ref}{Running a simulation}}}}. If this works fine and you are getting plausible results the
+installation was successful.
+
 \sphinxstepscope
 
 
 \chapter{Setting up a problem}
-\label{\detokenize{Setting_up_a_problem:setting-up-a-problem}}\label{\detokenize{Setting_up_a_problem:id1}}\label{\detokenize{Setting_up_a_problem::doc}}
+\label{\detokenize{Setting_up_a_problem:setting-up-a-problem}}\label{\detokenize{Setting_up_a_problem::doc}}
+\sphinxAtStartPar
+A short overview of the representation of the data in the data model will be given in the beginning. After that the
+tutorial focuses on modelling with the implemented user interface of the plugin.
+
 
 \section{Structural analysis component}
 \label{\detokenize{Setting_up_a_problem:structural-analysis-component}}
 \sphinxAtStartPar
-Rough overview with some figures
+In \hyperref[\detokenize{Setting_up_a_problem:struct-comp}]{Fig.\@ \ref{\detokenize{Setting_up_a_problem:struct-comp}}} a simplified depiction of the structural analysis component is given. This component is used in
+the SIMULTAN datamodel to store the information needed to export data with the RFEM Plugin to enable structural analysis
+simulations in RFEM 6.
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[height=250\sphinxpxdimen]{{struct_component}.jpg}
+\caption{Simplified depiction of the representation of the structural analysis component.}\label{\detokenize{Setting_up_a_problem:struct-comp}}\end{figure}
+
+\sphinxAtStartPar
+A more in depth look into the SIMULTAN representation of the structural analysis data is given in the
+chapter {\hyperref[\detokenize{SIMULTAN_Datastructure_to_incorporate_the_RFem_Data_model::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{SIMULTAN Datastructure to incorporate the RFEM Data model}}}}
+.
+
+\begin{sphinxadmonition}{warning}{Warning:}
+\sphinxAtStartPar
+Although this data structure can be implemented manually, it is strongly recommended to use the user interface that
+comes with the plugin for modelling. Manuel modelling is always prone to errors and could result in very time
+consuming efforts when trying to fix those.
+\end{sphinxadmonition}
+
+
+\section{Geometrical modelling}
+\label{\detokenize{Setting_up_a_problem:geometrical-modelling}}
+\sphinxAtStartPar
+The geometry is created in the Geometry Editor of the SIMULTAN Editor. Please consult
+the \sphinxhref{https://github.com/bph-tuwien/SIMULTAN.Documentation/wiki}{SIMULTAN Editor User Guide}
+for further information on how to use this Geometry Editor.
+
+
+\subsection{Modelling guidelines}
+\label{\detokenize{Setting_up_a_problem:modelling-guidelines}}
+\sphinxAtStartPar
+In \hyperref[\detokenize{Setting_up_a_problem:simultan-geometry}]{Fig.\@ \ref{\detokenize{Setting_up_a_problem:simultan-geometry}}} it can be seen that the plugin uses a reference geometry (white) as well as a geometry
+for the structural analysis (red). The reference geometry, representing the outer building envelope, can for example be
+an architectural model or the model used for the building physics simulations.
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[height=350\sphinxpxdimen]{{simultan_geometry}.png}
+\caption{Example of the geometry of a \sphinxstyleemphasis{Tiny House} modelled with the Geometry Editor of the SIMULTAN Editor.}\label{\detokenize{Setting_up_a_problem:simultan-geometry}}\end{figure}
+
+\begin{sphinxadmonition}{tip}{Tip:}
+\sphinxAtStartPar
+The structural model (red) can be easily created by copying the surfaces of the reference geometry to the middle axis
+of the structural building components.
+\end{sphinxadmonition}
+
+\sphinxAtStartPar
+For the simulation the structural geometry is exported to RFEM, therefore all of information exclusively used for
+structural analysis will be linked to this geometry.
 
 
 \section{User Interface}
 \label{\detokenize{Setting_up_a_problem:user-interface}}
+\sphinxAtStartPar
+The RFEM\sphinxhyphen{}Plugin comes with a user interface \hyperref[\detokenize{Setting_up_a_problem:ui-plugin}]{Fig.\@ \ref{\detokenize{Setting_up_a_problem:ui-plugin}}} to help with the creation of the needed data structure
+for the plugin. The user interface itself is closely built around the graphical interfaces of RFEM 6. With this we hope
+to provide a familiar experience to all the RFEM users when using this plugin.
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[height=250\sphinxpxdimen]{{ui_plugin}.jpg}
+\caption{Example of the user interface to create the data structure for the plugin when adding a new material.}\label{\detokenize{Setting_up_a_problem:ui-plugin}}\end{figure}
+
+
+\section{Connecting components with the geometry}
+\label{\detokenize{Setting_up_a_problem:connecting-components-with-the-geometry}}
+\sphinxAtStartPar
+The before created components are a representation of the information needed for the structural analysis. Connect the
+components to the geometry as needed. Please consult
+the \sphinxhref{https://github.com/bph-tuwien/SIMULTAN.Documentation/wiki}{SIMULTAN Editor User Guide}
+for general information on how to link components and geometrical information.
+
+\sphinxAtStartPar
+An outline of the most important links and how to create them will be given here.
+
+
+\subsection{Surfaces}
+\label{\detokenize{Setting_up_a_problem:surfaces}}
+\sphinxAtStartPar
+Information for surfaces are autogenerated via the already existing reference geometry since this data is not exclusive
+to structural analysis.
+
+
+\subsection{Members}
+\label{\detokenize{Setting_up_a_problem:members}}
+\sphinxAtStartPar
+Geometrical lines connected to physical properties for structural analysis, e.g. beams or columns, are called members in
+RFEM. To add a \sphinxcode{\sphinxupquote{Section\sphinxhyphen{}Component}} existing in the data model to a line follow these steps:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+select the line in the \sphinxcode{\sphinxupquote{Geometry Editor}}
+
+\item {} 
+\sphinxAtStartPar
+Open the \sphinxcode{\sphinxupquote{Property Editor}} for the selected line
+
+\item {} 
+\sphinxAtStartPar
+Choose the Component you want to link from the pop\sphinxhyphen{}up window
+
+\end{itemize}
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[height=350\sphinxpxdimen]{{add_member}.png}
+\caption{Example how to link a \sphinxcode{\sphinxupquote{Section\sphinxhyphen{}Component}} to a geometrical line in the \sphinxcode{\sphinxupquote{Geometry Editor}} using its \sphinxcode{\sphinxupquote{Property Editor}}.}\label{\detokenize{Setting_up_a_problem:add-member}}\end{figure}
+
+
+\subsection{Supports}
+\label{\detokenize{Setting_up_a_problem:supports}}
+\sphinxAtStartPar
+Supports are linked to vertices/lines/surfaces in the geometrical model. To add an existing \sphinxcode{\sphinxupquote{Support\sphinxhyphen{}Component}} to a
+geometry in the geometrical model follow these steps:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Select the node/line/surface in the \sphinxcode{\sphinxupquote{Geometry Editor}}
+
+\item {} 
+\sphinxAtStartPar
+Open the \sphinxcode{\sphinxupquote{Property Editor}} for the selected node
+
+\item {} 
+\sphinxAtStartPar
+Choose the Component you want to link from the pop\sphinxhyphen{}up window
+
+\end{itemize}
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[height=350\sphinxpxdimen]{{add_support}.png}
+\caption{Example how to link a \sphinxcode{\sphinxupquote{Support\sphinxhyphen{}Component}} to a geometrical node in the \sphinxcode{\sphinxupquote{Geometry Editor}} using its \sphinxcode{\sphinxupquote{Property Editor}}.}\label{\detokenize{Setting_up_a_problem:add-support}}\end{figure}
+
+
+\subsection{Loads}
+\label{\detokenize{Setting_up_a_problem:loads}}
+\sphinxAtStartPar
+Loads are linked to vertices/lines/surfaces in the geometrical model. To add an existing \sphinxcode{\sphinxupquote{Load\sphinxhyphen{}Component}} to a geometry
+in the geometrical model follow these steps:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Select the node/line/surface in the \sphinxcode{\sphinxupquote{Geometry Editor}}
+
+\item {} 
+\sphinxAtStartPar
+Open the \sphinxcode{\sphinxupquote{Property Editor}} for the selected node
+
+\item {} 
+\sphinxAtStartPar
+Choose the Component you want to link from the pop\sphinxhyphen{}up window
+
+\end{itemize}
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[height=350\sphinxpxdimen]{{add_load}.png}
+\caption{Example how to link a \sphinxcode{\sphinxupquote{Load\sphinxhyphen{}Component}} to a geometrical node in the \sphinxcode{\sphinxupquote{Geometry Editor}} using its \sphinxcode{\sphinxupquote{Property Editor}}.}\label{\detokenize{Setting_up_a_problem:add-load}}\end{figure}
+
+\begin{sphinxadmonition}{note}{Note:}
+\sphinxAtStartPar
+The same \sphinxcode{\sphinxupquote{Support\sphinxhyphen{}Component}} or \sphinxcode{\sphinxupquote{Load\sphinxhyphen{}Component}} can be linked to multiple different geometrical instances.
+For example, if the same force is attacking on two differnet surfaces, the same component is used from the data model.
+An in depth look at this you can find in {\hyperref[\detokenize{SIMULTAN_Datastructure_to_incorporate_the_RFem_Data_model::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{this chapter}}}}.
+\end{sphinxadmonition}
+
 \sphinxstepscope
 
 
@@ -202,12 +560,59 @@ Rough overview with some figures
 
 \section{Exporting the SIMULTAN\sphinxhyphen{}model to RFEM}
 \label{\detokenize{Running_a_simulation:exporting-the-simultan-model-to-rfem}}
+\sphinxAtStartPar
+When modelling according to the conventions described in chapter {\hyperref[\detokenize{Setting_up_a_problem::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{Setting up a problem}}}} the
+model is ready to be exported. This can be done by clicking the \sphinxcode{\sphinxupquote{Export Model}} button when you are inside the RFEM Plugin in
+the SIMULTAN Editor \hyperref[\detokenize{Running_a_simulation:export}]{Fig.\@ \ref{\detokenize{Running_a_simulation:export}}}.
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[height=250\sphinxpxdimen]{{export}.png}
+\caption{Export button to create the XML\sphinxhyphen{}file to import into RFEM 6.}\label{\detokenize{Running_a_simulation:export}}\end{figure}
+
+\sphinxAtStartPar
+After clicking the button you will be prompted with a \sphinxcode{\sphinxupquote{save dialogue}}. Please specify the location where you want to
+save the XML\sphinxhyphen{}file and confirm.
+
 
 \section{Importing into RFEM}
 \label{\detokenize{Running_a_simulation:importing-into-rfem}}
+\sphinxAtStartPar
+To import the XML\sphinxhyphen{}file open RFEM 6 and choose the \sphinxcode{\sphinxupquote{Import XML function}} \hyperref[\detokenize{Running_a_simulation:import-xml}]{Fig.\@ \ref{\detokenize{Running_a_simulation:import-xml}}}.
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[height=250\sphinxpxdimen]{{import_xml}.png}
+\caption{Import XML function in RFEM 6.}\label{\detokenize{Running_a_simulation:import-xml}}\end{figure}
+
+\sphinxAtStartPar
+Navigate to the location on your disk where you have saved the exported model and confirm to load it. After the model is
+loaded the it will appear in RFEM 6 and is ready for further manipulation \hyperref[\detokenize{Running_a_simulation:model-in-rfem}]{Fig.\@ \ref{\detokenize{Running_a_simulation:model-in-rfem}}}.
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[height=250\sphinxpxdimen]{{model_in_rfem}.jpg}
+\caption{Imported model in RFEM 6 based on an export from a SIMULTAN model.}\label{\detokenize{Running_a_simulation:model-in-rfem}}\end{figure}
+
+\begin{sphinxadmonition}{warning}{Warning:}
+\sphinxAtStartPar
+In the current state of development the plugin is \sphinxstylestrong{NOT} bidirectional. Any adaptations done in RFEM are only
+available in RFEM and cannot be retrieved into the SIMULTAN datamodel. This is a funcitonality which will be
+implemented in the future. For now use RFEM as a solver and adjust the model in the SIMULTAN Editor.
+\end{sphinxadmonition}
+
 
 \section{Running a simulation in RFEM}
 \label{\detokenize{Running_a_simulation:running-a-simulation-in-rfem}}
+\sphinxAtStartPar
+To run a simulation create load combinations in RFEM and run the simulation as usual in the finite element software.
+
 \sphinxstepscope
 
 
@@ -216,33 +621,117 @@ Rough overview with some figures
 
 \section{Visual results}
 \label{\detokenize{Results_of_the_simulation:visual-results}}
+\sphinxAtStartPar
+For now the simulation results can only be viewed in RFEM itself, \hyperref[\detokenize{Results_of_the_simulation:rfem-sim-results}]{Fig.\@ \ref{\detokenize{Results_of_the_simulation:rfem-sim-results}}}.
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[height=350\sphinxpxdimen]{{rfem_sim_results}.png}
+\caption{Results of a FE\sphinxhyphen{}analysis with RFEM 6 for an exported SIMULTAN model.}\label{\detokenize{Results_of_the_simulation:rfem-sim-results}}\end{figure}
+
 
 \section{Additional information}
 \label{\detokenize{Results_of_the_simulation:additional-information}}
-\sphinxstepscope
-
-
-\chapter{Connecting an existing model to the RFEM Plugin}
-\label{\detokenize{Connecting_an_existing_model_to_the_RFem_Plugin:connecting-an-existing-model-to-the-rfem-plugin}}\label{\detokenize{Connecting_an_existing_model_to_the_RFem_Plugin:id1}}\label{\detokenize{Connecting_an_existing_model_to_the_RFem_Plugin::doc}}
-
-\section{How and what to add to the data model}
-\label{\detokenize{Connecting_an_existing_model_to_the_RFem_Plugin:how-and-what-to-add-to-the-data-model}}
-
-\section{Creating a linked geometry}
-\label{\detokenize{Connecting_an_existing_model_to_the_RFem_Plugin:creating-a-linked-geometry}}
-
-\section{Creating the needed components}
-\label{\detokenize{Connecting_an_existing_model_to_the_RFem_Plugin:creating-the-needed-components}}
 \sphinxAtStartPar
-Although it is possible to recreate the needed data structure for the structural analysis component in the
-SIMULTAN\sphinxhyphen{}Editor manually, it is strongly recommended to use the User\sphinxhyphen{}Interface of the plugin and apply changes when they
-would be necessary.
+This restriction is due to the fact that the SIMULTAN Editor has no functionality for mesh visualization implemented
+yet. Since simulation results of finite element calculations are dependent on proper visualization it was decided to
+delay this feature till the SIMULTAN Editor can provide this functionality.
+
+\begin{sphinxadmonition}{note}{Note:}
+\sphinxAtStartPar
+As a workaround one can attach the calculation protocol and the RFEM model to the \sphinxcode{\sphinxupquote{Structural Analysis Component}}.
+\end{sphinxadmonition}
 
 \sphinxstepscope
 
 
-\chapter{SIMULTAN Datastructure to incorporate the RFem Data model}
+\chapter{SIMULTAN Datastructure to incorporate the RFEM Data model}
 \label{\detokenize{SIMULTAN_Datastructure_to_incorporate_the_RFem_Data_model:simultan-datastructure-to-incorporate-the-rfem-data-model}}\label{\detokenize{SIMULTAN_Datastructure_to_incorporate_the_RFem_Data_model:id1}}\label{\detokenize{SIMULTAN_Datastructure_to_incorporate_the_RFem_Data_model::doc}}
+
+\section{Digital Twin and data model for structural analysis}
+\label{\detokenize{SIMULTAN_Datastructure_to_incorporate_the_RFem_Data_model:digital-twin-and-data-model-for-structural-analysis}}
+\sphinxAtStartPar
+In \hyperref[\detokenize{SIMULTAN_Datastructure_to_incorporate_the_RFem_Data_model:struct-anal-comp}]{Fig.\@ \ref{\detokenize{SIMULTAN_Datastructure_to_incorporate_the_RFem_Data_model:struct-anal-comp}}} a simplified depiction of the digital twin and the \sphinxcode{\sphinxupquote{Structural Analysis Component}} is
+given. This component is used in the SIMULTAN datamodel to store the information needed to export data with the RFEM
+Plugin to enable structural analysis simulations in RFEM 6. The global structural analysis can be simplified into 3 main
+containers of information, which are independent of each other. They are represented by their own compoenents in the
+SIMULTAN data model, everyone of them holding sub\sphinxhyphen{}components for further detailed information.
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[height=750\sphinxpxdimen]{{schematic_components_struc}.jpg}
+\caption{Simplified depiction of the representation of a Digital Twin with a \sphinxcode{\sphinxupquote{Structural Analysis Component}}.}\label{\detokenize{SIMULTAN_Datastructure_to_incorporate_the_RFem_Data_model:struct-anal-comp}}\end{figure}
+
+\sphinxAtStartPar
+The connection and dependency between some of these components is indicated in \hyperref[\detokenize{SIMULTAN_Datastructure_to_incorporate_the_RFem_Data_model:struct-anal-comp}]{Fig.\@ \ref{\detokenize{SIMULTAN_Datastructure_to_incorporate_the_RFem_Data_model:struct-anal-comp}}} by the blue
+lines with arrows next to \sphinxcode{\sphinxupquote{Component with physical information}}, \sphinxcode{\sphinxupquote{Component for geometric assignment}} and
+the \sphinxcode{\sphinxupquote{Structural Analysis Component}}.
+
+\sphinxAtStartPar
+In the SIMULTAN Editor these components could be represented in the ways shown in \hyperref[\detokenize{SIMULTAN_Datastructure_to_incorporate_the_RFem_Data_model:digitwin-simultan}]{Fig.\@ \ref{\detokenize{SIMULTAN_Datastructure_to_incorporate_the_RFem_Data_model:digitwin-simultan}}} and
+\hyperref[\detokenize{SIMULTAN_Datastructure_to_incorporate_the_RFem_Data_model:comp-simultan}]{Fig.\@ \ref{\detokenize{SIMULTAN_Datastructure_to_incorporate_the_RFem_Data_model:comp-simultan}}}.
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[height=250\sphinxpxdimen]{{digitwin_simultan}.jpg}
+\caption{Collapsed model of a digital twin for a \sphinxstyleemphasis{Tiny House} in the SIMULTAN Editor.}\label{\detokenize{SIMULTAN_Datastructure_to_incorporate_the_RFem_Data_model:digitwin-simultan}}\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[height=750\sphinxpxdimen]{{comp_simultan}.jpg}
+\caption{Representation of the depicted components in the SIMULTAN Editor.}\label{\detokenize{SIMULTAN_Datastructure_to_incorporate_the_RFem_Data_model:comp-simultan}}\end{figure}
+
+
+\section{Structural Analysis Component in depth}
+\label{\detokenize{SIMULTAN_Datastructure_to_incorporate_the_RFem_Data_model:structural-analysis-component-in-depth}}
+\sphinxAtStartPar
+If we take a more detailed look into the \sphinxcode{\sphinxupquote{Structural Analysis Component}} we can see the references and dependencies
+created to link and store information in \hyperref[\detokenize{SIMULTAN_Datastructure_to_incorporate_the_RFem_Data_model:struct-comp-detail}]{Fig.\@ \ref{\detokenize{SIMULTAN_Datastructure_to_incorporate_the_RFem_Data_model:struct-comp-detail}}}. Here the data structure with modelling
+information, references and dependencies for a section are shown. In this case this section represents a steel beam
+which will be exported to RFEM 6 with the plugin for a finite element analysis.
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[height=750\sphinxpxdimen]{{struct_comp_detail}.jpg}
+\caption{Detailed depiction of the representation of a section in the Digital Twin.}\label{\detokenize{SIMULTAN_Datastructure_to_incorporate_the_RFem_Data_model:struct-comp-detail}}\end{figure}
+
+
+\section{Data modelling decisions for data representation}
+\label{\detokenize{SIMULTAN_Datastructure_to_incorporate_the_RFem_Data_model:data-modelling-decisions-for-data-representation}}
+\sphinxAtStartPar
+Due to the fact that in structural analysis often times the same data is used in different geometrical locations (e.g.
+force attacking at multiple locations) the component storing the information for these repeatedly used data is only
+created once and instances of the component are storing the differing geomtrical information. This helps to avoid
+cluttering of the data model is avoided.
+
+\sphinxAtStartPar
+The instances can be accessed from the SIMULTAN Editor as shown in \hyperref[\detokenize{SIMULTAN_Datastructure_to_incorporate_the_RFem_Data_model:show-instances}]{Fig.\@ \ref{\detokenize{SIMULTAN_Datastructure_to_incorporate_the_RFem_Data_model:show-instances}}} and further information is
+displayed in the opened tab, \hyperref[\detokenize{SIMULTAN_Datastructure_to_incorporate_the_RFem_Data_model:instance-window}]{Fig.\@ \ref{\detokenize{SIMULTAN_Datastructure_to_incorporate_the_RFem_Data_model:instance-window}}}.
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[height=250\sphinxpxdimen]{{show_instances}.png}
+\caption{Right click to access instances of a component.}\label{\detokenize{SIMULTAN_Datastructure_to_incorporate_the_RFem_Data_model:show-instances}}\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[height=250\sphinxpxdimen]{{instance_window}.png}
+\caption{Further information can be accessed from the opened instances tab.}\label{\detokenize{SIMULTAN_Datastructure_to_incorporate_the_RFem_Data_model:instance-window}}\end{figure}
+
 \sphinxstepscope
 
 
@@ -252,7 +741,7 @@ would be necessary.
 MIT License
 
 \sphinxAtStartPar
-Copyright (c) 2022 Andreas Sarkany, Zsombor Jarosi
+Copyright (c) 2022 RWT Plus ZT GmbH and TU Wien
 
 \sphinxAtStartPar
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
@@ -271,13 +760,25 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER I
 OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 \sphinxAtStartPar
-Please reference this repo when including information or knowledge provided here in your work
+Please reference this repo when including information or knowledge provided here in your work.
 
 \sphinxstepscope
 
 
-\chapter{Literatur}
-\label{\detokenize{References:literatur}}\label{\detokenize{References:references}}\label{\detokenize{References::doc}}\phantomsection\label{\detokenize{References:id1}}
+\chapter{References}
+\label{\detokenize{References:references}}\label{\detokenize{References:id1}}\label{\detokenize{References::doc}}
+\begin{sphinxthebibliography}{BuhlerSB}
+\bibitem[Betal]{References:id4}
+\sphinxAtStartPar
+\sphinxstylestrong{missing year in bednarSIMULTANSimultanePlanungsumgebung}
+\bibitem[BuhlerSB22]{References:id5}
+\sphinxAtStartPar
+Maximilian Bühler, Bernhard Steiner, and Thomas Bednar. Digital Twin applications using the SIMULTAN data model and Python. In \sphinxstyleemphasis{WBC 2022}. Melbourne, 2022.
+\bibitem[PLW+19]{References:id8}
+\sphinxAtStartPar
+Galina Paskaleva, Thomas Lewis, Sabine Wolny, Bernhard Steiner, and Thomas Bednar. SIMULTAN as a Big\sphinxhyphen{}Open\sphinxhyphen{}Real\sphinxhyphen{}BIM Data Model \sphinxhyphen{} Proof of Concept for the Design Phase. In \sphinxstyleemphasis{CIB World Building Congress 2019 Constructing Smart Cities}, 10. 2019.
+\end{sphinxthebibliography}
+
 
 
 

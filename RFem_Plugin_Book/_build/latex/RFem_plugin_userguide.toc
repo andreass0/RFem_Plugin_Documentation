@@ -2,25 +2,34 @@
 \contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}%
 \contentsline {section}{\numberline {1.1}What is the RFEM\sphinxhyphen {}Plugin?}{3}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Functionality covered by the RFEM\sphinxhyphen {}Plugin}{3}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Project}{3}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Authors}{3}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Getting help}{3}{section.1.5}%
+\contentsline {section}{\numberline {1.3}Project}{4}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Authors}{4}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Getting help}{4}{section.1.5}%
 \contentsline {chapter}{\numberline {2}Getting started with the RFEM Plugin}{5}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Installation}{5}{section.2.1}%
+\contentsline {section}{\numberline {2.1}Installing the SIMULTAN\sphinxhyphen {}Editor}{5}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Installing the RFEM Plugin}{5}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Run the example}{6}{section.2.3}%
 \contentsline {chapter}{\numberline {3}Setting up a problem}{7}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Structural analysis component}{7}{section.3.1}%
-\contentsline {section}{\numberline {3.2}User Interface}{7}{section.3.2}%
-\contentsline {chapter}{\numberline {4}Running a simulation}{9}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Exporting the SIMULTAN\sphinxhyphen {}model to RFEM}{9}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Importing into RFEM}{9}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Running a simulation in RFEM}{9}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Results of the simulation}{11}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Visual results}{11}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Additional information}{11}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Connecting an existing model to the RFEM Plugin}{13}{chapter.6}%
-\contentsline {section}{\numberline {6.1}How and what to add to the data model}{13}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Creating a linked geometry}{13}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Creating the needed components}{13}{section.6.3}%
-\contentsline {chapter}{\numberline {7}SIMULTAN Datastructure to incorporate the RFem Data model}{15}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Copyright and license agreements}{17}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Literatur}{19}{chapter.9}%
+\contentsline {section}{\numberline {3.2}Geometrical modelling}{8}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Modelling guidelines}{8}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}User Interface}{9}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Connecting components with the geometry}{9}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Surfaces}{9}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Members}{9}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Supports}{10}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Loads}{10}{subsection.3.4.4}%
+\contentsline {chapter}{\numberline {4}Running a simulation}{13}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Exporting the SIMULTAN\sphinxhyphen {}model to RFEM}{13}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Importing into RFEM}{13}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Running a simulation in RFEM}{15}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Results of the simulation}{17}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Visual results}{17}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Additional information}{17}{section.5.2}%
+\contentsline {chapter}{\numberline {6}SIMULTAN Datastructure to incorporate the RFEM Data model}{19}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Digital Twin and data model for structural analysis}{19}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Structural Analysis Component in depth}{19}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Data modelling decisions for data representation}{19}{section.6.3}%
+\contentsline {chapter}{\numberline {7}Copyright and license agreements}{25}{chapter.7}%
+\contentsline {chapter}{\numberline {8}References}{27}{chapter.8}%
+\contentsline {chapter}{Bibliography}{29}{chapter*.3}%
