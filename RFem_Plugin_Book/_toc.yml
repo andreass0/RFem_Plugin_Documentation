@@ -3,7 +3,14 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+parts:
+  - caption: Inhalt
+    chapters:
+      - file: Introduction
+      - file: Getting_started_with_the_RFem_Plugin
+      - file: Setting_up_a_problem
+      - file: Running_a_simulation
+      - file: Results_of_the_simulation
+      - file: SIMULTAN_Datastructure_to_incorporate_the_RFem_Data_model
+      - file: LICENSE
+      - file: References
