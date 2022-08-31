@@ -1,7 +1,7 @@
 # Setting up a problem
 
 A short overview of the representation of the data in the data model will be given in the beginning. After that the
-tutorial focuses on modelling with the implemented user interface of the plugin. 
+tutorial focuses on modelling with the implemented user interface of the plugin.
 
 ## Structural analysis component
 
@@ -52,7 +52,7 @@ The structural model (red) can be easily created by copying the surfaces of the 
 of the structural building components.
 ```
 
-For the simulation the structural geometry is exported to RFEM, therefore all of information exclusively used for
+For the simulation the structural geometry is exported to RFEM, therefore all of the information exclusively used for
 structural analysis will be linked to this geometry.
 
 ## User Interface
@@ -61,12 +61,142 @@ The RFEM-Plugin comes with a user interface {numref}`ui_plugin` to help with the
 for the plugin. The user interface itself is closely built around the graphical interfaces of RFEM 6. With this we hope
 to provide a familiar experience to all the RFEM users when using this plugin.
 
-```{figure} img/ui_plugin.jpg
+```{figure} img/ui_plugin.png
 ---
-height: 250px
+height: 500px
 name: ui_plugin
 ---
-Example of the user interface to create the data structure for the plugin when adding a new material.
+Example of the user interface to create the data structure for the plugin when adding a new member.
+```
+
+### Creating a new member
+
+To create a new member simply click on `Member` in plugin's tab {numref}`ui_member`. The in {numref}`ui_plugin` will
+open.
+
+```{figure} img/ui_member.png
+---
+height: 200px
+name: ui_member
+---
+Example of the plugin's tab where all the functions for the user-interface can be accessed.
+```
+
+Now follow these steps to create a new member:
+
+- Click on `New` to add a new member.
+- Select the newly created member, and change the name if needed.
+- Create a new section, by clicking on `Section` or choose an already existing section from the dropdown menu.
+- Choose the `Member Type` with the dropdown menu.
+- Adjust eccentricities and hinges if needed.
+
+### Creating a load
+
+Different types of loads can be created:
+
+- Nodal Loads
+- Uniform Line Loads
+- Varying Loads
+- Uniform Surface Loads
+
+```{figure} img/ui_loads.png
+---
+height: 200px
+name: ui_loads
+---
+Different types of loads that can be created with the plugin and its UI.
+```
+
+The general UI for loads will be explained with the window for `Uniform Surface Loads` but is analogous
+for `Nodal Loads`
+and `Uniform Line Loads`. `Varying Loads`will be explained separately [here](Varying_Loads).
+
+After clicking on `Uniform Surface Loads` its window will appear.
+
+```{figure} img/ui_surface_loads.png
+---
+height: 500px
+name: ui_surface_loads
+---
+UI for surface loads.
+```
+
+Now follow these steps to create a new load:
+
+- Click on `New` to add a new load.
+- Select the newly created load, and change the name if needed.
+- Choose the `Action Category`. These correspond to the ones in RFEM 6.
+- Choose the `Load Direction`. These correspond to the ones in RFEM 6.
+- Enter the magnitude of the load.
+- Check `Active self-weight` if needed.
+
+(Varying_Loads)=
+
+#### Varying Loads
+
+For `Varying Loads` the process is the same as described above, except that the magnitude of the loads have to be
+entered with a table.
+
+```{figure} img/ui_varying_loads.png
+---
+height: 500px
+name: ui_varying_loads
+---
+UI for varying loads.
+```
+
+After creating the load, the a template table to enter the magnitudes and their geometrical properties can be found
+under the created component in the editor.
+
+```{figure} img/editor_varying_loads.png
+---
+height: 250px
+name: editor_varying_loads
+---
+Varying loads component in the `SIMULTAN-Editor`. Under the parameter `p` the template table can be found to adjust the loads.
+```
+
+### Creating Supports
+
+Different types of supports can be created:
+
+- Nodal Supports
+- Line Supports
+- Surface Supports
+
+```{figure} img/ui_supports.png
+---
+height: 150px
+name: ui_supports
+---
+Different types of supports that can be created with the plugin and its UI.
+```
+
+The general UI for supports will be explained with the window for `Nodal Supports` but is mainly analogous
+for `Line Supports` and ` Surface Supports`. Deviations will be explained separately and are mainly part of the
+`Nonlinearities`.
+
+After clicking on `Nodal Supports` its window will appear.
+
+```{figure} img/ui_nodal_supports.png
+---
+height: 500px
+name: ui_nodal_supports
+---
+UI for nodal supports.
+```
+
+Now follow these steps to create a new support:
+
+- Click on `New` to add a new support.
+- Select the newly created support, and change the name if needed.
+- Adjust `Translational Nodal Support Conditions`
+- Adjust `Rotational Nodal Support Conditions`
+- Select `Nonlinearity` for the different directions if needed. 
+
+```{note}
+Based on the `Nonlinearity` selected either value fields will appear or there will be a note to adjust the values 
+in the table of the created component if needed.
 ```
 
 ## Connecting components with the geometry
@@ -94,7 +224,7 @@ RFEM. To add a `Section-Component` existing in the data model to a line follow t
 
 ```{figure} img/add_member.png
 ---
-height: 350px
+height: 500px
 name: add_member
 ---
 Example how to link a `Section-Component` to a geometrical line in the `Geometry Editor` using its `Property Editor`.
@@ -111,7 +241,7 @@ geometry in the geometrical model follow these steps:
 
 ```{figure} img/add_support.png
 ---
-height: 350px
+height: 500px
 name: add_support
 ---
 Example how to link a `Support-Component` to a geometrical node in the `Geometry Editor` using its `Property Editor`.
@@ -120,7 +250,7 @@ Example how to link a `Support-Component` to a geometrical node in the `Geometry
 ### Loads
 
 Loads are linked to vertices/lines/surfaces in the geometrical model. To add an existing `Load-Component` to a geometry
-in the geometrical model follow these steps: 
+in the geometrical model follow these steps:
 
 - Select the node/line/surface in the `Geometry Editor`
 - Open the `Property Editor` for the selected node
@@ -128,7 +258,7 @@ in the geometrical model follow these steps:
 
 ```{figure} img/add_load.png
 ---
-height: 350px
+height: 500px
 name: add_load
 ---
 Example how to link a `Load-Component` to a geometrical node in the `Geometry Editor` using its `Property Editor`.
