@@ -142,7 +142,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="References.html">
-   Literatur
+   References
   </a>
  </li>
 </ul>
@@ -253,6 +253,30 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#user-interface">
    User Interface
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-a-new-member">
+     Creating a new member
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-a-load">
+     Creating a load
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#varying-loads">
+       Varying Loads
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-supports">
+     Creating Supports
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#connecting-components-with-the-geometry">
@@ -322,6 +346,30 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#user-interface">
    User Interface
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-a-new-member">
+     Creating a new member
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-a-load">
+     Creating a load
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#varying-loads">
+       Varying Loads
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-supports">
+     Creating Supports
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#connecting-components-with-the-geometry">
@@ -405,7 +453,7 @@ an architectural model or the model used for the building physics simulations.</
 <p>The structural model (red) can be easily created by copying the surfaces of the reference geometry to the middle axis
 of the structural building components.</p>
 </div>
-<p>For the simulation the structural geometry is exported to RFEM, therefore all of information exclusively used for
+<p>For the simulation the structural geometry is exported to RFEM, therefore all of the information exclusively used for
 structural analysis will be linked to this geometry.</p>
 </section>
 </section>
@@ -415,11 +463,122 @@ structural analysis will be linked to this geometry.</p>
 for the plugin. The user interface itself is closely built around the graphical interfaces of RFEM 6. With this we hope
 to provide a familiar experience to all the RFEM users when using this plugin.</p>
 <figure class="align-default" id="ui-plugin">
-<a class="reference internal image-reference" href="_images/ui_plugin.jpg"><img alt="_images/ui_plugin.jpg" src="_images/ui_plugin.jpg" style="height: 250px;" /></a>
+<a class="reference internal image-reference" href="_images/ui_plugin.png"><img alt="_images/ui_plugin.png" src="_images/ui_plugin.png" style="height: 500px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Example of the user interface to create the data structure for the plugin when adding a new material.</span><a class="headerlink" href="#ui-plugin" title="Permalink to this image">¶</a></p>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Example of the user interface to create the data structure for the plugin when adding a new member.</span><a class="headerlink" href="#ui-plugin" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
+<section id="creating-a-new-member">
+<h3>Creating a new member<a class="headerlink" href="#creating-a-new-member" title="Permalink to this headline">¶</a></h3>
+<p>To create a new member simply click on <code class="docutils literal notranslate"><span class="pre">Member</span></code> in plugin’s tab <a class="reference internal" href="#ui-member"><span class="std std-numref">Fig. 6</span></a>. The in <a class="reference internal" href="#ui-plugin"><span class="std std-numref">Fig. 5</span></a> will
+open.</p>
+<figure class="align-default" id="ui-member">
+<a class="reference internal image-reference" href="_images/ui_member.png"><img alt="_images/ui_member.png" src="_images/ui_member.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Example of the plugin’s tab where all the functions for the user-interface can be accessed.</span><a class="headerlink" href="#ui-member" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Now follow these steps to create a new member:</p>
+<ul class="simple">
+<li><p>Click on <code class="docutils literal notranslate"><span class="pre">New</span></code> to add a new member.</p></li>
+<li><p>Select the newly created member, and change the name if needed.</p></li>
+<li><p>Create a new section, by clicking on <code class="docutils literal notranslate"><span class="pre">Section</span></code> or choose an already existing section from the dropdown menu.</p></li>
+<li><p>Choose the <code class="docutils literal notranslate"><span class="pre">Member</span> <span class="pre">Type</span></code> with the dropdown menu.</p></li>
+<li><p>Adjust eccentricities and hinges if needed.</p></li>
+</ul>
+</section>
+<section id="creating-a-load">
+<h3>Creating a load<a class="headerlink" href="#creating-a-load" title="Permalink to this headline">¶</a></h3>
+<p>Different types of loads can be created:</p>
+<ul class="simple">
+<li><p>Nodal Loads</p></li>
+<li><p>Uniform Line Loads</p></li>
+<li><p>Varying Loads</p></li>
+<li><p>Uniform Surface Loads</p></li>
+</ul>
+<figure class="align-default" id="ui-loads">
+<a class="reference internal image-reference" href="_images/ui_loads.png"><img alt="_images/ui_loads.png" src="_images/ui_loads.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Different types of loads that can be created with the plugin and its UI.</span><a class="headerlink" href="#ui-loads" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>The general UI for loads will be explained with the window for <code class="docutils literal notranslate"><span class="pre">Uniform</span> <span class="pre">Surface</span> <span class="pre">Loads</span></code> but is analogous
+for <code class="docutils literal notranslate"><span class="pre">Nodal</span> <span class="pre">Loads</span></code>
+and <code class="docutils literal notranslate"><span class="pre">Uniform</span> <span class="pre">Line</span> <span class="pre">Loads</span></code>. <code class="docutils literal notranslate"><span class="pre">Varying</span> <span class="pre">Loads</span></code>will be explained separately <a class="reference internal" href="#varying-loads"><span class="std std-ref">here</span></a>.</p>
+<p>After clicking on <code class="docutils literal notranslate"><span class="pre">Uniform</span> <span class="pre">Surface</span> <span class="pre">Loads</span></code> its window will appear.</p>
+<figure class="align-default" id="ui-surface-loads">
+<a class="reference internal image-reference" href="_images/ui_surface_loads.png"><img alt="_images/ui_surface_loads.png" src="_images/ui_surface_loads.png" style="height: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">UI for surface loads.</span><a class="headerlink" href="#ui-surface-loads" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Now follow these steps to create a new load:</p>
+<ul class="simple">
+<li><p>Click on <code class="docutils literal notranslate"><span class="pre">New</span></code> to add a new load.</p></li>
+<li><p>Select the newly created load, and change the name if needed.</p></li>
+<li><p>Choose the <code class="docutils literal notranslate"><span class="pre">Action</span> <span class="pre">Category</span></code>. These correspond to the ones in RFEM 6.</p></li>
+<li><p>Choose the <code class="docutils literal notranslate"><span class="pre">Load</span> <span class="pre">Direction</span></code>. These correspond to the ones in RFEM 6.</p></li>
+<li><p>Enter the magnitude of the load.</p></li>
+<li><p>Check <code class="docutils literal notranslate"><span class="pre">Active</span> <span class="pre">self-weight</span></code> if needed.</p></li>
+</ul>
+<section id="varying-loads">
+<span id="id1"></span><h4>Varying Loads<a class="headerlink" href="#varying-loads" title="Permalink to this headline">¶</a></h4>
+<p>For <code class="docutils literal notranslate"><span class="pre">Varying</span> <span class="pre">Loads</span></code> the process is the same as described above, except that the magnitude of the loads have to be
+entered with a table.</p>
+<figure class="align-default" id="ui-varying-loads">
+<a class="reference internal image-reference" href="_images/ui_varying_loads.png"><img alt="_images/ui_varying_loads.png" src="_images/ui_varying_loads.png" style="height: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">UI for varying loads.</span><a class="headerlink" href="#ui-varying-loads" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>After creating the load, the a template table to enter the magnitudes and their geometrical properties can be found
+under the created component in the editor.</p>
+<figure class="align-default" id="editor-varying-loads">
+<a class="reference internal image-reference" href="_images/editor_varying_loads.png"><img alt="_images/editor_varying_loads.png" src="_images/editor_varying_loads.png" style="height: 250px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Varying loads component in the <code class="docutils literal notranslate"><span class="pre">SIMULTAN-Editor</span></code>. Under the parameter <code class="docutils literal notranslate"><span class="pre">p</span></code> the template table can be found to adjust the loads.</span><a class="headerlink" href="#editor-varying-loads" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="creating-supports">
+<h3>Creating Supports<a class="headerlink" href="#creating-supports" title="Permalink to this headline">¶</a></h3>
+<p>Different types of supports can be created:</p>
+<ul class="simple">
+<li><p>Nodal Supports</p></li>
+<li><p>Line Supports</p></li>
+<li><p>Surface Supports</p></li>
+</ul>
+<figure class="align-default" id="ui-supports">
+<a class="reference internal image-reference" href="_images/ui_supports.png"><img alt="_images/ui_supports.png" src="_images/ui_supports.png" style="height: 150px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Different types of supports that can be created with the plugin and its UI.</span><a class="headerlink" href="#ui-supports" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>The general UI for supports will be explained with the window for <code class="docutils literal notranslate"><span class="pre">Nodal</span> <span class="pre">Supports</span></code> but is mainly analogous
+for <code class="docutils literal notranslate"><span class="pre">Line</span> <span class="pre">Supports</span></code> and <code class="docutils literal notranslate"> <span class="pre">Surface</span> <span class="pre">Supports</span></code>. Deviations will be explained separately and are mainly part of the
+<code class="docutils literal notranslate"><span class="pre">Nonlinearities</span></code>.</p>
+<p>After clicking on <code class="docutils literal notranslate"><span class="pre">Nodal</span> <span class="pre">Supports</span></code> its window will appear.</p>
+<figure class="align-default" id="ui-nodal-supports">
+<a class="reference internal image-reference" href="_images/ui_nodal_supports.png"><img alt="_images/ui_nodal_supports.png" src="_images/ui_nodal_supports.png" style="height: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">UI for nodal supports.</span><a class="headerlink" href="#ui-nodal-supports" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Now follow these steps to create a new support:</p>
+<ul class="simple">
+<li><p>Click on <code class="docutils literal notranslate"><span class="pre">New</span></code> to add a new support.</p></li>
+<li><p>Select the newly created support, and change the name if needed.</p></li>
+<li><p>Adjust <code class="docutils literal notranslate"><span class="pre">Translational</span> <span class="pre">Nodal</span> <span class="pre">Support</span> <span class="pre">Conditions</span></code></p></li>
+<li><p>Adjust <code class="docutils literal notranslate"><span class="pre">Rotational</span> <span class="pre">Nodal</span> <span class="pre">Support</span> <span class="pre">Conditions</span></code></p></li>
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">Nonlinearity</span></code> for the different directions if needed.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Based on the <code class="docutils literal notranslate"><span class="pre">Nonlinearity</span></code> selected either value fields will appear or there will be a note to adjust the values
+in the table of the created component if needed.</p>
+</div>
+</section>
 </section>
 <section id="connecting-components-with-the-geometry">
 <h2>Connecting components with the geometry<a class="headerlink" href="#connecting-components-with-the-geometry" title="Permalink to this headline">¶</a></h2>
@@ -443,9 +602,9 @@ RFEM. To add a <code class="docutils literal notranslate"><span class="pre">Sect
 <li><p>Choose the Component you want to link from the pop-up window</p></li>
 </ul>
 <figure class="align-default" id="add-member">
-<a class="reference internal image-reference" href="_images/add_member.png"><img alt="_images/add_member.png" src="_images/add_member.png" style="height: 350px;" /></a>
+<a class="reference internal image-reference" href="_images/add_member.png"><img alt="_images/add_member.png" src="_images/add_member.png" style="height: 500px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Example how to link a <code class="docutils literal notranslate"><span class="pre">Section-Component</span></code> to a geometrical line in the <code class="docutils literal notranslate"><span class="pre">Geometry</span> <span class="pre">Editor</span></code> using its <code class="docutils literal notranslate"><span class="pre">Property</span> <span class="pre">Editor</span></code>.</span><a class="headerlink" href="#add-member" title="Permalink to this image">¶</a></p>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Example how to link a <code class="docutils literal notranslate"><span class="pre">Section-Component</span></code> to a geometrical line in the <code class="docutils literal notranslate"><span class="pre">Geometry</span> <span class="pre">Editor</span></code> using its <code class="docutils literal notranslate"><span class="pre">Property</span> <span class="pre">Editor</span></code>.</span><a class="headerlink" href="#add-member" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 </section>
@@ -459,9 +618,9 @@ geometry in the geometrical model follow these steps:</p>
 <li><p>Choose the Component you want to link from the pop-up window</p></li>
 </ul>
 <figure class="align-default" id="add-support">
-<a class="reference internal image-reference" href="_images/add_support.png"><img alt="_images/add_support.png" src="_images/add_support.png" style="height: 350px;" /></a>
+<a class="reference internal image-reference" href="_images/add_support.png"><img alt="_images/add_support.png" src="_images/add_support.png" style="height: 500px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Example how to link a <code class="docutils literal notranslate"><span class="pre">Support-Component</span></code> to a geometrical node in the <code class="docutils literal notranslate"><span class="pre">Geometry</span> <span class="pre">Editor</span></code> using its <code class="docutils literal notranslate"><span class="pre">Property</span> <span class="pre">Editor</span></code>.</span><a class="headerlink" href="#add-support" title="Permalink to this image">¶</a></p>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Example how to link a <code class="docutils literal notranslate"><span class="pre">Support-Component</span></code> to a geometrical node in the <code class="docutils literal notranslate"><span class="pre">Geometry</span> <span class="pre">Editor</span></code> using its <code class="docutils literal notranslate"><span class="pre">Property</span> <span class="pre">Editor</span></code>.</span><a class="headerlink" href="#add-support" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 </section>
@@ -475,9 +634,9 @@ in the geometrical model follow these steps:</p>
 <li><p>Choose the Component you want to link from the pop-up window</p></li>
 </ul>
 <figure class="align-default" id="add-load">
-<a class="reference internal image-reference" href="_images/add_load.png"><img alt="_images/add_load.png" src="_images/add_load.png" style="height: 350px;" /></a>
+<a class="reference internal image-reference" href="_images/add_load.png"><img alt="_images/add_load.png" src="_images/add_load.png" style="height: 500px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Example how to link a <code class="docutils literal notranslate"><span class="pre">Load-Component</span></code> to a geometrical node in the <code class="docutils literal notranslate"><span class="pre">Geometry</span> <span class="pre">Editor</span></code> using its <code class="docutils literal notranslate"><span class="pre">Property</span> <span class="pre">Editor</span></code>.</span><a class="headerlink" href="#add-load" title="Permalink to this image">¶</a></p>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Example how to link a <code class="docutils literal notranslate"><span class="pre">Load-Component</span></code> to a geometrical node in the <code class="docutils literal notranslate"><span class="pre">Geometry</span> <span class="pre">Editor</span></code> using its <code class="docutils literal notranslate"><span class="pre">Property</span> <span class="pre">Editor</span></code>.</span><a class="headerlink" href="#add-load" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
