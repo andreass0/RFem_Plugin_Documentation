@@ -66,7 +66,7 @@ to provide a familiar experience to all the RFEM users when using this plugin.
 height: 500px
 name: ui_plugin
 ---
-Example of the user interface to create the data structure for the plugin when adding a new member.
+Example of different layers of the user interface to create the data structure for the plugin when adding a new member.
 ```
 
 ### Creating a new member
@@ -84,11 +84,19 @@ Example of the plugin's tab where all the functions for the user-interface can b
 
 Now follow these steps to create a new member:
 
-- Click on `New` to add a new member.
-- Select the newly created member, and change the name if needed.
-- Create a new section, by clicking on `Section` or choose an already existing section from the dropdown menu.
-- Choose the `Member Type` with the dropdown menu.
-- Adjust eccentricities and hinges if needed.
+1. Click on `New` to add a new member. 
+2. Select the newly created member, and change the name if needed. 
+3. Create a new section, by clicking on `Section` or choose an already existing section from the dropdown menu. 
+4. Choose the `Member Type` with the dropdown menu. 
+5. Adjust `Eccentricities` and `Hinges` if needed.
+
+```{figure} img/ui_member_guide.png
+---
+height: 500px
+name: ui_member_guide
+---
+Steps to create a new member in the data-model.
+```
 
 ### Creating a load
 
@@ -123,12 +131,12 @@ UI for surface loads.
 
 Now follow these steps to create a new load:
 
-- Click on `New` to add a new load.
-- Select the newly created load, and change the name if needed.
-- Choose the `Action Category`. These correspond to the ones in RFEM 6.
-- Choose the `Load Direction`. These correspond to the ones in RFEM 6.
-- Enter the magnitude of the load.
-- Check `Active self-weight` if needed.
+1. Click on `New` to add a new load. 
+2. Select the newly created load, and change the name if needed. 
+3. Choose the `Action Category`. These correspond to the ones in RFEM 6. 
+4. Choose the `Load Direction`. These correspond to the ones in RFEM 6. 
+5. Enter the magnitude of the load. 
+6. Check `Active self-weight` if needed.
 
 (Varying_Loads)=
 
@@ -142,7 +150,7 @@ entered with a table.
 height: 500px
 name: ui_varying_loads
 ---
-UI for varying loads.
+UI for varying loads. Set the value in the table template created for the value by the plugin in the Editor. 
 ```
 
 After creating the load, the a template table to enter the magnitudes and their geometrical properties can be found
@@ -188,11 +196,11 @@ UI for nodal supports.
 
 Now follow these steps to create a new support:
 
-- Click on `New` to add a new support.
-- Select the newly created support, and change the name if needed.
-- Adjust `Translational Nodal Support Conditions`
-- Adjust `Rotational Nodal Support Conditions`
-- Select `Nonlinearity` for the different directions if needed. 
+1. Click on `New` to add a new support. 
+2. Select the newly created support, and change the name if needed. 
+3. Adjust `Translational Nodal Support Conditions`
+4. Adjust `Rotational Nodal Support Conditions`
+5. Select `Nonlinearity` for the different directions if needed. 
 
 ```{note}
 Based on the `Nonlinearity` selected either value fields will appear or there will be a note to adjust the values 
