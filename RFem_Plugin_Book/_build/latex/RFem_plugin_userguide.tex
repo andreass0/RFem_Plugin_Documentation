@@ -85,7 +85,7 @@
         
 
 \title{RFEM-Plugin for SIMULTAN (Work in Progress)}
-\date{Aug 26, 2022}
+\date{Sep 01, 2022}
 \release{}
 \author{Copyright (c) 2022 RWT Plus ZT GmbH and TU Wien}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -424,7 +424,7 @@ of the structural building components.
 \end{sphinxadmonition}
 
 \sphinxAtStartPar
-For the simulation the structural geometry is exported to RFEM, therefore all of information exclusively used for
+For the simulation the structural geometry is exported to RFEM, therefore all of the information exclusively used for
 structural analysis will be linked to this geometry.
 
 
@@ -439,8 +439,230 @@ to provide a familiar experience to all the RFEM users when using this plugin.
 \centering
 \capstart
 
-\noindent\sphinxincludegraphics[height=250\sphinxpxdimen]{{ui_plugin}.jpg}
-\caption{Example of the user interface to create the data structure for the plugin when adding a new material.}\label{\detokenize{Setting_up_a_problem:ui-plugin}}\end{figure}
+\noindent\sphinxincludegraphics[height=500\sphinxpxdimen]{{ui_plugin}.png}
+\caption{Example of different layers of the user interface to create the data structure for the plugin when adding a new member.}\label{\detokenize{Setting_up_a_problem:ui-plugin}}\end{figure}
+
+
+\subsection{Creating a new member}
+\label{\detokenize{Setting_up_a_problem:creating-a-new-member}}
+\sphinxAtStartPar
+To create a new member simply click on \sphinxcode{\sphinxupquote{Member}} in plugin’s tab \hyperref[\detokenize{Setting_up_a_problem:ui-member}]{Fig.\@ \ref{\detokenize{Setting_up_a_problem:ui-member}}}. The in \hyperref[\detokenize{Setting_up_a_problem:ui-plugin}]{Fig.\@ \ref{\detokenize{Setting_up_a_problem:ui-plugin}}} will
+open.
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[height=200\sphinxpxdimen]{{ui_member}.png}
+\caption{Example of the plugin’s tab where all the functions for the user\sphinxhyphen{}interface can be accessed.}\label{\detokenize{Setting_up_a_problem:ui-member}}\end{figure}
+
+\sphinxAtStartPar
+Now follow these steps to create a new member:
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+Click on \sphinxcode{\sphinxupquote{New}} to add a new member.
+
+\item {} 
+\sphinxAtStartPar
+Select the newly created member, and change the name if needed.
+
+\item {} 
+\sphinxAtStartPar
+Create a new section, by clicking on \sphinxcode{\sphinxupquote{Section}} or choose an already existing section from the dropdown menu.
+
+\item {} 
+\sphinxAtStartPar
+Choose the \sphinxcode{\sphinxupquote{Member Type}} with the dropdown menu.
+
+\item {} 
+\sphinxAtStartPar
+Adjust \sphinxcode{\sphinxupquote{Eccentricities}} and \sphinxcode{\sphinxupquote{Hinges}} if needed.
+
+\end{enumerate}
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[height=500\sphinxpxdimen]{{ui_member_guide}.png}
+\caption{Steps to create a new member in the data\sphinxhyphen{}model.}\label{\detokenize{Setting_up_a_problem:ui-member-guide}}\end{figure}
+
+
+\subsection{Creating a load}
+\label{\detokenize{Setting_up_a_problem:creating-a-load}}
+\sphinxAtStartPar
+Different types of loads can be created:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Nodal Loads
+
+\item {} 
+\sphinxAtStartPar
+Uniform Line Loads
+
+\item {} 
+\sphinxAtStartPar
+Varying Loads
+
+\item {} 
+\sphinxAtStartPar
+Uniform Surface Loads
+
+\end{itemize}
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[height=200\sphinxpxdimen]{{ui_loads}.png}
+\caption{Different types of loads that can be created with the plugin and its UI.}\label{\detokenize{Setting_up_a_problem:ui-loads}}\end{figure}
+
+\sphinxAtStartPar
+The general UI for loads will be explained with the window for \sphinxcode{\sphinxupquote{Uniform Surface Loads}} but is analogous
+for \sphinxcode{\sphinxupquote{Nodal Loads}}
+and \sphinxcode{\sphinxupquote{Uniform Line Loads}}. \sphinxcode{\sphinxupquote{Varying Loads}}will be explained separately {\hyperref[\detokenize{Setting_up_a_problem:varying-loads}]{\sphinxcrossref{\DUrole{std,std-ref}{here}}}}.
+
+\sphinxAtStartPar
+After clicking on \sphinxcode{\sphinxupquote{Uniform Surface Loads}} its window will appear.
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[height=500\sphinxpxdimen]{{ui_surface_loads}.png}
+\caption{UI for surface loads.}\label{\detokenize{Setting_up_a_problem:ui-surface-loads}}\end{figure}
+
+\sphinxAtStartPar
+Now follow these steps to create a new load:
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+Click on \sphinxcode{\sphinxupquote{New}} to add a new load.
+
+\item {} 
+\sphinxAtStartPar
+Select the newly created load, and change the name if needed.
+
+\item {} 
+\sphinxAtStartPar
+Choose the \sphinxcode{\sphinxupquote{Action Category}}. These correspond to the ones in RFEM 6.
+
+\item {} 
+\sphinxAtStartPar
+Choose the \sphinxcode{\sphinxupquote{Load Direction}}. These correspond to the ones in RFEM 6.
+
+\item {} 
+\sphinxAtStartPar
+Enter the magnitude of the load.
+
+\item {} 
+\sphinxAtStartPar
+Check \sphinxcode{\sphinxupquote{Active self\sphinxhyphen{}weight}} if needed.
+
+\end{enumerate}
+
+
+\subsubsection{Varying Loads}
+\label{\detokenize{Setting_up_a_problem:varying-loads}}\label{\detokenize{Setting_up_a_problem:id1}}
+\sphinxAtStartPar
+For \sphinxcode{\sphinxupquote{Varying Loads}} the process is the same as described above, except that the magnitude of the loads have to be
+entered with a table.
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[height=500\sphinxpxdimen]{{ui_varying_loads}.png}
+\caption{UI for varying loads. Set the value in the table template created for the value by the plugin in the Editor.}\label{\detokenize{Setting_up_a_problem:ui-varying-loads}}\end{figure}
+
+\sphinxAtStartPar
+After creating the load, the a template table to enter the magnitudes and their geometrical properties can be found
+under the created component in the editor.
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[height=250\sphinxpxdimen]{{editor_varying_loads}.png}
+\caption{Varying loads component in the \sphinxcode{\sphinxupquote{SIMULTAN\sphinxhyphen{}Editor}}. Under the parameter \sphinxcode{\sphinxupquote{p}} the template table can be found to adjust the loads.}\label{\detokenize{Setting_up_a_problem:editor-varying-loads}}\end{figure}
+
+
+\subsection{Creating Supports}
+\label{\detokenize{Setting_up_a_problem:creating-supports}}
+\sphinxAtStartPar
+Different types of supports can be created:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Nodal Supports
+
+\item {} 
+\sphinxAtStartPar
+Line Supports
+
+\item {} 
+\sphinxAtStartPar
+Surface Supports
+
+\end{itemize}
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[height=150\sphinxpxdimen]{{ui_supports}.png}
+\caption{Different types of supports that can be created with the plugin and its UI.}\label{\detokenize{Setting_up_a_problem:ui-supports}}\end{figure}
+
+\sphinxAtStartPar
+The general UI for supports will be explained with the window for \sphinxcode{\sphinxupquote{Nodal Supports}} but is mainly analogous
+for \sphinxcode{\sphinxupquote{Line Supports}} and \sphinxcode{\sphinxupquote{ Surface Supports}}. Deviations will be explained separately and are mainly part of the
+\sphinxcode{\sphinxupquote{Nonlinearities}}.
+
+\sphinxAtStartPar
+After clicking on \sphinxcode{\sphinxupquote{Nodal Supports}} its window will appear.
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[height=500\sphinxpxdimen]{{ui_nodal_supports}.png}
+\caption{UI for nodal supports.}\label{\detokenize{Setting_up_a_problem:ui-nodal-supports}}\end{figure}
+
+\sphinxAtStartPar
+Now follow these steps to create a new support:
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+Click on \sphinxcode{\sphinxupquote{New}} to add a new support.
+
+\item {} 
+\sphinxAtStartPar
+Select the newly created support, and change the name if needed.
+
+\item {} 
+\sphinxAtStartPar
+Adjust \sphinxcode{\sphinxupquote{Translational Nodal Support Conditions}}
+
+\item {} 
+\sphinxAtStartPar
+Adjust \sphinxcode{\sphinxupquote{Rotational Nodal Support Conditions}}
+
+\item {} 
+\sphinxAtStartPar
+Select \sphinxcode{\sphinxupquote{Nonlinearity}} for the different directions if needed.
+
+\end{enumerate}
+
+\begin{sphinxadmonition}{note}{Note:}
+\sphinxAtStartPar
+Based on the \sphinxcode{\sphinxupquote{Nonlinearity}} selected either value fields will appear or there will be a note to adjust the values
+in the table of the created component if needed.
+\end{sphinxadmonition}
 
 
 \section{Connecting components with the geometry}
@@ -486,7 +708,7 @@ Choose the Component you want to link from the pop\sphinxhyphen{}up window
 \centering
 \capstart
 
-\noindent\sphinxincludegraphics[height=350\sphinxpxdimen]{{add_member}.png}
+\noindent\sphinxincludegraphics[height=500\sphinxpxdimen]{{add_member}.png}
 \caption{Example how to link a \sphinxcode{\sphinxupquote{Section\sphinxhyphen{}Component}} to a geometrical line in the \sphinxcode{\sphinxupquote{Geometry Editor}} using its \sphinxcode{\sphinxupquote{Property Editor}}.}\label{\detokenize{Setting_up_a_problem:add-member}}\end{figure}
 
 
@@ -514,7 +736,7 @@ Choose the Component you want to link from the pop\sphinxhyphen{}up window
 \centering
 \capstart
 
-\noindent\sphinxincludegraphics[height=350\sphinxpxdimen]{{add_support}.png}
+\noindent\sphinxincludegraphics[height=500\sphinxpxdimen]{{add_support}.png}
 \caption{Example how to link a \sphinxcode{\sphinxupquote{Support\sphinxhyphen{}Component}} to a geometrical node in the \sphinxcode{\sphinxupquote{Geometry Editor}} using its \sphinxcode{\sphinxupquote{Property Editor}}.}\label{\detokenize{Setting_up_a_problem:add-support}}\end{figure}
 
 
@@ -542,7 +764,7 @@ Choose the Component you want to link from the pop\sphinxhyphen{}up window
 \centering
 \capstart
 
-\noindent\sphinxincludegraphics[height=350\sphinxpxdimen]{{add_load}.png}
+\noindent\sphinxincludegraphics[height=500\sphinxpxdimen]{{add_load}.png}
 \caption{Example how to link a \sphinxcode{\sphinxupquote{Load\sphinxhyphen{}Component}} to a geometrical node in the \sphinxcode{\sphinxupquote{Geometry Editor}} using its \sphinxcode{\sphinxupquote{Property Editor}}.}\label{\detokenize{Setting_up_a_problem:add-load}}\end{figure}
 
 \begin{sphinxadmonition}{note}{Note:}

@@ -5,8 +5,8 @@
 ## Exporting the SIMULTAN-model to RFEM
 
 When modelling according to the conventions described in chapter [Setting up a problem](Setting_up_a_problem.md) the
-model is ready to be exported. This can be done by clicking the `Export Model` button when you are inside the RFEM Plugin in
-the SIMULTAN Editor {numref}`export`.
+model is ready to be exported. This can be done by clicking the `Export Model` button when you are inside the RFEM
+Plugin in the SIMULTAN Editor {numref}`export`.
 
 ```{figure} img/export.png
 ---

@@ -14,22 +14,26 @@
 \contentsline {section}{\numberline {3.2}Geometrical modelling}{8}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Modelling guidelines}{8}{subsection.3.2.1}%
 \contentsline {section}{\numberline {3.3}User Interface}{9}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Connecting components with the geometry}{9}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Surfaces}{9}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Members}{9}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Supports}{10}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}Loads}{10}{subsection.3.4.4}%
-\contentsline {chapter}{\numberline {4}Running a simulation}{13}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Exporting the SIMULTAN\sphinxhyphen {}model to RFEM}{13}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Importing into RFEM}{13}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Running a simulation in RFEM}{15}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Results of the simulation}{17}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Visual results}{17}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Additional information}{17}{section.5.2}%
-\contentsline {chapter}{\numberline {6}SIMULTAN Datastructure to incorporate the RFEM Data model}{19}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Digital Twin and data model for structural analysis}{19}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Structural Analysis Component in depth}{19}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Data modelling decisions for data representation}{19}{section.6.3}%
-\contentsline {chapter}{\numberline {7}Copyright and license agreements}{25}{chapter.7}%
-\contentsline {chapter}{\numberline {8}References}{27}{chapter.8}%
-\contentsline {chapter}{Bibliography}{29}{chapter*.3}%
+\contentsline {subsection}{\numberline {3.3.1}Creating a new member}{9}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Creating a load}{10}{subsection.3.3.2}%
+\contentsline {subsubsection}{Varying Loads}{12}{subsubsection*.3}%
+\contentsline {subsection}{\numberline {3.3.3}Creating Supports}{13}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}Connecting components with the geometry}{15}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Surfaces}{15}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Members}{15}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Supports}{15}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Loads}{15}{subsection.3.4.4}%
+\contentsline {chapter}{\numberline {4}Running a simulation}{19}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Exporting the SIMULTAN\sphinxhyphen {}model to RFEM}{19}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Importing into RFEM}{19}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Running a simulation in RFEM}{21}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Results of the simulation}{23}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Visual results}{23}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Additional information}{23}{section.5.2}%
+\contentsline {chapter}{\numberline {6}SIMULTAN Datastructure to incorporate the RFEM Data model}{25}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Digital Twin and data model for structural analysis}{25}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Structural Analysis Component in depth}{25}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Data modelling decisions for data representation}{25}{section.6.3}%
+\contentsline {chapter}{\numberline {7}Copyright and license agreements}{31}{chapter.7}%
+\contentsline {chapter}{\numberline {8}References}{33}{chapter.8}%
+\contentsline {chapter}{Bibliography}{35}{chapter*.4}%
