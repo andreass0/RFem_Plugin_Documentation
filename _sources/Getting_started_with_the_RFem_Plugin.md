@@ -5,7 +5,7 @@
 ## Installing the SIMULTAN-Editor
 
 To use the plugin you need to install the latest version of the SIMULTAN Editor, which can be
-found [here](https://github.com/bph-tuwien/SIMULTAN.Documentation/wiki). The SIMULTAN Editor enables you to interact
+found <strike>here</strike>. The SIMULTAN Editor enables you to interact
 with the SIMULTAN data model through a user interface. A comprehensive user-guide how to install and interact with the
 SIMULTAN Editor can be found under this [link](https://github.com/bph-tuwien/SIMULTAN.Documentation/wiki).
 

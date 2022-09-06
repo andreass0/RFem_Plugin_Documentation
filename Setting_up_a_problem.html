@@ -276,6 +276,11 @@ const thebe_selector_output = ".output, .cell_output"
      Creating Supports
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-surfaces">
+     Creating Surfaces
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -369,6 +374,11 @@ const thebe_selector_output = ".output, .cell_output"
      Creating Supports
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-surfaces">
+     Creating Surfaces
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -439,6 +449,11 @@ the <a class="reference external" href="https://github.com/bph-tuwien/SIMULTAN.D
 for further information on how to use this Geometry Editor.</p>
 <section id="modelling-guidelines">
 <h3>Modelling guidelines<a class="headerlink" href="#modelling-guidelines" title="Permalink to this headline">¶</a></h3>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Either import or start with the provided template file <code class="docutils literal notranslate"><span class="pre">_temp.simultan</span></code>. All the necessary datastructure to operate the
+RFEM-plugin will be provided there. The simgeo file has to be called struct_analysis.simgeo.</p>
+</div>
 <p>In <a class="reference internal" href="#simultan-geometry"><span class="std std-numref">Fig. 4</span></a> it can be seen that the plugin uses a reference geometry (white) as well as a geometry
 for the structural analysis (red). The reference geometry, representing the outer building envelope, can for example be
 an architectural model or the model used for the building physics simulations.</p>
@@ -448,13 +463,13 @@ an architectural model or the model used for the building physics simulations.</
 <p><span class="caption-number">Fig. 4 </span><span class="caption-text">Example of the geometry of a <em>Tiny House</em> modelled with the Geometry Editor of the SIMULTAN Editor.</span><a class="headerlink" href="#simultan-geometry" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>The structural model (red) can be easily created by copying the surfaces of the reference geometry to the middle axis
-of the structural building components.</p>
-</div>
 <p>For the simulation the structural geometry is exported to RFEM, therefore all of the information exclusively used for
 structural analysis will be linked to this geometry.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are only concerned with structural analysis it is enough to have all the necessary information in the
+struct_analysis.simgeo file.</p>
+</div>
 </section>
 </section>
 <section id="user-interface">
@@ -585,6 +600,29 @@ for <code class="docutils literal notranslate"><span class="pre">Line</span> <sp
 in the table of the created component if needed.</p>
 </div>
 </section>
+<section id="creating-surfaces">
+<h3>Creating Surfaces<a class="headerlink" href="#creating-surfaces" title="Permalink to this headline">¶</a></h3>
+<p>The creation of surfaces with the UI is still under development. As a workaround please copy the provided template
+component and also its geometry reference counterpart and adjust them to your needs.</p>
+<figure class="align-default" id="ui-surface-temp-comps">
+<a class="reference internal image-reference" href="_images/ui_surface_temp_comps.png"><img alt="_images/ui_surface_temp_comps.png" src="_images/ui_surface_temp_comps.png" style="height: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Template component for surfaces.</span><a class="headerlink" href="#ui-surface-temp-comps" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Building components which are correctly saved in the datastructure will be recognized by the UI and structural analysis
+relevant parameters can be adjusted in the UI itself.</p>
+<figure class="align-default" id="ui-surfaces">
+<a class="reference internal image-reference" href="_images/ui_surfaces.png"><img alt="_images/ui_surfaces.png" src="_images/ui_surfaces.png" style="height: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">UI window for surface definitions.</span><a class="headerlink" href="#ui-surfaces" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The thickness has to be adjusted in the <code class="docutils literal notranslate"><span class="pre">SIMULTAN</span> <span class="pre">Editor</span></code> for now.</p>
+</div>
+</section>
 </section>
 <section id="connecting-components-with-the-geometry">
 <h2>Connecting components with the geometry<a class="headerlink" href="#connecting-components-with-the-geometry" title="Permalink to this headline">¶</a></h2>
@@ -595,8 +633,9 @@ for general information on how to link components and geometrical information.</
 <p>An outline of the most important links and how to create them will be given here.</p>
 <section id="surfaces">
 <h3>Surfaces<a class="headerlink" href="#surfaces" title="Permalink to this headline">¶</a></h3>
-<p>Information for surfaces are autogenerated via the already existing reference geometry since this data is not exclusive
+<p>Information for surfaces is autogenerated via the already existing reference geometry since this data is not exclusive
 to structural analysis.</p>
+<p>If you are solely working on structural analysis you can assign the components to the surfaces, just as you are used to.</p>
 </section>
 <section id="members">
 <h3>Members<a class="headerlink" href="#members" title="Permalink to this headline">¶</a></h3>
@@ -610,7 +649,7 @@ RFEM. To add a <code class="docutils literal notranslate"><span class="pre">Sect
 <figure class="align-default" id="add-member">
 <a class="reference internal image-reference" href="_images/add_member.png"><img alt="_images/add_member.png" src="_images/add_member.png" style="height: 500px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Example how to link a <code class="docutils literal notranslate"><span class="pre">Section-Component</span></code> to a geometrical line in the <code class="docutils literal notranslate"><span class="pre">Geometry</span> <span class="pre">Editor</span></code> using its <code class="docutils literal notranslate"><span class="pre">Property</span> <span class="pre">Editor</span></code>.</span><a class="headerlink" href="#add-member" title="Permalink to this image">¶</a></p>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">Example how to link a <code class="docutils literal notranslate"><span class="pre">Section-Component</span></code> to a geometrical line in the <code class="docutils literal notranslate"><span class="pre">Geometry</span> <span class="pre">Editor</span></code> using its <code class="docutils literal notranslate"><span class="pre">Property</span> <span class="pre">Editor</span></code>.</span><a class="headerlink" href="#add-member" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 </section>
@@ -626,7 +665,7 @@ geometry in the geometrical model follow these steps:</p>
 <figure class="align-default" id="add-support">
 <a class="reference internal image-reference" href="_images/add_support.png"><img alt="_images/add_support.png" src="_images/add_support.png" style="height: 500px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Example how to link a <code class="docutils literal notranslate"><span class="pre">Support-Component</span></code> to a geometrical node in the <code class="docutils literal notranslate"><span class="pre">Geometry</span> <span class="pre">Editor</span></code> using its <code class="docutils literal notranslate"><span class="pre">Property</span> <span class="pre">Editor</span></code>.</span><a class="headerlink" href="#add-support" title="Permalink to this image">¶</a></p>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Example how to link a <code class="docutils literal notranslate"><span class="pre">Support-Component</span></code> to a geometrical node in the <code class="docutils literal notranslate"><span class="pre">Geometry</span> <span class="pre">Editor</span></code> using its <code class="docutils literal notranslate"><span class="pre">Property</span> <span class="pre">Editor</span></code>.</span><a class="headerlink" href="#add-support" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 </section>
@@ -642,7 +681,7 @@ in the geometrical model follow these steps:</p>
 <figure class="align-default" id="add-load">
 <a class="reference internal image-reference" href="_images/add_load.png"><img alt="_images/add_load.png" src="_images/add_load.png" style="height: 500px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 16 </span><span class="caption-text">Example how to link a <code class="docutils literal notranslate"><span class="pre">Load-Component</span></code> to a geometrical node in the <code class="docutils literal notranslate"><span class="pre">Geometry</span> <span class="pre">Editor</span></code> using its <code class="docutils literal notranslate"><span class="pre">Property</span> <span class="pre">Editor</span></code>.</span><a class="headerlink" href="#add-load" title="Permalink to this image">¶</a></p>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Example how to link a <code class="docutils literal notranslate"><span class="pre">Load-Component</span></code> to a geometrical node in the <code class="docutils literal notranslate"><span class="pre">Geometry</span> <span class="pre">Editor</span></code> using its <code class="docutils literal notranslate"><span class="pre">Property</span> <span class="pre">Editor</span></code>.</span><a class="headerlink" href="#add-load" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
