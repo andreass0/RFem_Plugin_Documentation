@@ -37,7 +37,8 @@ for further information on how to use this Geometry Editor.
 
 ```{important}
 Either import or start with the provided template file `_temp.simultan`. All the necessary datastructure to operate the
-RFEM-plugin will be provided there. The simgeo file has to be called struct_analysis.simgeo.
+RFEM-plugin will be provided there. The simgeo file has to be called struct_analysis.simgeo. Do not manipulate the 
+`Structural Analysis Component`!
 ```
 
 In {numref}`simultan_geometry` it can be seen that the plugin uses a reference geometry (white) as well as a geometry

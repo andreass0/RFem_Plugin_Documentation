@@ -295,7 +295,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span id="id1"></span><h1>SIMULTAN Datastructure to incorporate the RFEM Data model<a class="headerlink" href="#simultan-datastructure-to-incorporate-the-rfem-data-model" title="Permalink to this headline">¶</a></h1>
 <section id="digital-twin-and-data-model-for-structural-analysis">
 <h2>Digital Twin and data model for structural analysis<a class="headerlink" href="#digital-twin-and-data-model-for-structural-analysis" title="Permalink to this headline">¶</a></h2>
-<p>In <a class="reference internal" href="#struct-anal-comp"><span class="std std-numref">Fig. 23</span></a> a simplified depiction of the digital twin and the <code class="docutils literal notranslate"><span class="pre">Structural</span> <span class="pre">Analysis</span> <span class="pre">Component</span></code> is
+<p>In <a class="reference internal" href="#struct-anal-comp"><span class="std std-numref">Fig. 24</span></a> a simplified depiction of the digital twin and the <code class="docutils literal notranslate"><span class="pre">Structural</span> <span class="pre">Analysis</span> <span class="pre">Component</span></code> is
 given. This component is used in the SIMULTAN datamodel to store the information needed to export data with the RFEM
 Plugin to enable structural analysis simulations in RFEM 6. The global structural analysis can be simplified into 3 main
 containers of information, which are independent of each other. They are represented by their own compoenents in the
@@ -303,37 +303,37 @@ SIMULTAN data model, everyone of them holding sub-components for further detaile
 <figure class="align-default" id="struct-anal-comp">
 <a class="reference internal image-reference" href="_images/schematic_components_struc.jpg"><img alt="_images/schematic_components_struc.jpg" src="_images/schematic_components_struc.jpg" style="height: 750px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 23 </span><span class="caption-text">Simplified depiction of the representation of a Digital Twin with a <code class="docutils literal notranslate"><span class="pre">Structural</span> <span class="pre">Analysis</span> <span class="pre">Component</span></code>.</span><a class="headerlink" href="#struct-anal-comp" title="Permalink to this image">¶</a></p>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Simplified depiction of the representation of a Digital Twin with a <code class="docutils literal notranslate"><span class="pre">Structural</span> <span class="pre">Analysis</span> <span class="pre">Component</span></code>.</span><a class="headerlink" href="#struct-anal-comp" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
-<p>The connection and dependency between some of these components is indicated in <a class="reference internal" href="#struct-anal-comp"><span class="std std-numref">Fig. 23</span></a> by the blue
+<p>The connection and dependency between some of these components is indicated in <a class="reference internal" href="#struct-anal-comp"><span class="std std-numref">Fig. 24</span></a> by the blue
 lines with arrows next to <code class="docutils literal notranslate"><span class="pre">Component</span> <span class="pre">with</span> <span class="pre">physical</span> <span class="pre">information</span></code>, <code class="docutils literal notranslate"><span class="pre">Component</span> <span class="pre">for</span> <span class="pre">geometric</span> <span class="pre">assignment</span></code> and
 the <code class="docutils literal notranslate"><span class="pre">Structural</span> <span class="pre">Analysis</span> <span class="pre">Component</span></code>.</p>
-<p>In the SIMULTAN Editor these components could be represented in the ways shown in <a class="reference internal" href="#digitwin-simultan"><span class="std std-numref">Fig. 24</span></a> and
-<a class="reference internal" href="#comp-simultan"><span class="std std-numref">Fig. 25</span></a>.</p>
+<p>In the SIMULTAN Editor these components could be represented in the ways shown in <a class="reference internal" href="#digitwin-simultan"><span class="std std-numref">Fig. 25</span></a> and
+<a class="reference internal" href="#comp-simultan"><span class="std std-numref">Fig. 26</span></a>.</p>
 <figure class="align-default" id="digitwin-simultan">
 <a class="reference internal image-reference" href="_images/digitwin_simultan.jpg"><img alt="_images/digitwin_simultan.jpg" src="_images/digitwin_simultan.jpg" style="height: 250px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Collapsed model of a digital twin for a <em>Tiny House</em> in the SIMULTAN Editor.</span><a class="headerlink" href="#digitwin-simultan" title="Permalink to this image">¶</a></p>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text">Collapsed model of a digital twin for a <em>Tiny House</em> in the SIMULTAN Editor.</span><a class="headerlink" href="#digitwin-simultan" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="comp-simultan">
 <a class="reference internal image-reference" href="_images/comp_simultan.jpg"><img alt="_images/comp_simultan.jpg" src="_images/comp_simultan.jpg" style="height: 750px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 25 </span><span class="caption-text">Representation of the depicted components in the SIMULTAN Editor.</span><a class="headerlink" href="#comp-simultan" title="Permalink to this image">¶</a></p>
+<p><span class="caption-number">Fig. 26 </span><span class="caption-text">Representation of the depicted components in the SIMULTAN Editor.</span><a class="headerlink" href="#comp-simultan" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="structural-analysis-component-in-depth">
 <h2>Structural Analysis Component in depth<a class="headerlink" href="#structural-analysis-component-in-depth" title="Permalink to this headline">¶</a></h2>
 <p>If we take a more detailed look into the <code class="docutils literal notranslate"><span class="pre">Structural</span> <span class="pre">Analysis</span> <span class="pre">Component</span></code> we can see the references and dependencies
-created to link and store information in <a class="reference internal" href="#struct-comp-detail"><span class="std std-numref">Fig. 26</span></a>. Here the data structure with modelling
+created to link and store information in <a class="reference internal" href="#struct-comp-detail"><span class="std std-numref">Fig. 27</span></a>. Here the data structure with modelling
 information, references and dependencies for a section are shown. In this case this section represents a steel beam
 which will be exported to RFEM 6 with the plugin for a finite element analysis.</p>
 <figure class="align-default" id="struct-comp-detail">
 <a class="reference internal image-reference" href="_images/struct_comp_detail.jpg"><img alt="_images/struct_comp_detail.jpg" src="_images/struct_comp_detail.jpg" style="height: 750px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 26 </span><span class="caption-text">Detailed depiction of the representation of a section in the Digital Twin.</span><a class="headerlink" href="#struct-comp-detail" title="Permalink to this image">¶</a></p>
+<p><span class="caption-number">Fig. 27 </span><span class="caption-text">Detailed depiction of the representation of a section in the Digital Twin.</span><a class="headerlink" href="#struct-comp-detail" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 </section>
@@ -343,18 +343,18 @@ which will be exported to RFEM 6 with the plugin for a finite element analysis.<
 force attacking at multiple locations) the component storing the information for these repeatedly used data is only
 created once and instances of the component are storing the differing geomtrical information. This helps to avoid
 cluttering of the data model is avoided.</p>
-<p>The instances can be accessed from the SIMULTAN Editor as shown in <a class="reference internal" href="#show-instances"><span class="std std-numref">Fig. 27</span></a> and further information is
-displayed in the opened tab, <a class="reference internal" href="#instance-window"><span class="std std-numref">Fig. 28</span></a>.</p>
+<p>The instances can be accessed from the SIMULTAN Editor as shown in <a class="reference internal" href="#show-instances"><span class="std std-numref">Fig. 28</span></a> and further information is
+displayed in the opened tab, <a class="reference internal" href="#instance-window"><span class="std std-numref">Fig. 29</span></a>.</p>
 <figure class="align-default" id="show-instances">
 <a class="reference internal image-reference" href="_images/show_instances.png"><img alt="_images/show_instances.png" src="_images/show_instances.png" style="height: 250px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 27 </span><span class="caption-text">Right click to access instances of a component.</span><a class="headerlink" href="#show-instances" title="Permalink to this image">¶</a></p>
+<p><span class="caption-number">Fig. 28 </span><span class="caption-text">Right click to access instances of a component.</span><a class="headerlink" href="#show-instances" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="instance-window">
 <a class="reference internal image-reference" href="_images/instance_window.png"><img alt="_images/instance_window.png" src="_images/instance_window.png" style="height: 250px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 28 </span><span class="caption-text">Further information can be accessed from the opened instances tab.</span><a class="headerlink" href="#instance-window" title="Permalink to this image">¶</a></p>
+<p><span class="caption-number">Fig. 29 </span><span class="caption-text">Further information can be accessed from the opened instances tab.</span><a class="headerlink" href="#instance-window" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 </section>

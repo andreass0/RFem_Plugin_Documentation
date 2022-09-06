@@ -334,6 +334,17 @@ implemented in the future. For now use RFEM as a solver and adjust the model in 
 <section id="running-a-simulation-in-rfem">
 <h2>Running a simulation in RFEM<a class="headerlink" href="#running-a-simulation-in-rfem" title="Permalink to this headline">¶</a></h2>
 <p>To run a simulation create load combinations in RFEM and run the simulation as usual in the finite element software.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Maybe some equal instances of faces or vertices will be detected by RFEM. Ignore this message for now. This is a known
+behaviour of the plugin. The exploration of this will be part of our future development.</p>
+</div>
+<figure class="align-default" id="plausibility-check-rfem">
+<a class="reference internal image-reference" href="_images/plausibility_check_rfem.png"><img alt="_images/plausibility_check_rfem.png" src="_images/plausibility_check_rfem.png" style="height: 250px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Ignore the plausibility check.</span><a class="headerlink" href="#plausibility-check-rfem" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 
