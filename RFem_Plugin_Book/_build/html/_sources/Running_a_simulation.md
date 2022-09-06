@@ -51,3 +51,16 @@ implemented in the future. For now use RFEM as a solver and adjust the model in 
 ## Running a simulation in RFEM
 
 To run a simulation create load combinations in RFEM and run the simulation as usual in the finite element software.
+
+```{note}
+Maybe some equal instances of faces or vertices will be detected by RFEM. Ignore this message for now. This is a known
+behaviour of the plugin. The exploration of this will be part of our future development.
+```
+
+```{figure} img/plausibility_check_rfem.png
+---
+height: 250px
+name: plausibility_check_rfem
+---
+Ignore the plausibility check.
+```
